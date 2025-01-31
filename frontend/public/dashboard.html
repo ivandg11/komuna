@@ -1,0 +1,105 @@
+
+<link rel="stylesheet" href="../public/css/dashboard.css" />
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Servicios</title>
+    <link rel="stylesheet" href="/public/css/styles.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-content">
+        <div class="nav-brand">
+          <a href="#">MAC</a>
+        </div>
+        <div class="nav-links">
+          <a href="index.html" id="inicio">Inicio</a>
+          <a href="servicios.html">Servicios</a>
+          <a href="#">Comunidad</a>
+          <a href="#">Contacto</a>
+          <a href="cuenta.html" id="miCuenta" style="display: none;">Mi Cuenta</a>
+          <a href="#" id="logout" style="display: none;">Cerrar Sesión</a>
+        </div>
+        
+      </div>
+    </nav>
+   
+   
+     
+      <div class="dashboard-container">
+        <!-- Sección de Bienvenida -->
+        <div class="header-section">
+            <h1>Bienvenido de vuelta, [Usuario]</h1>
+            <p class="subtitle">Último acceso: 25 Oct 2023</p>
+        </div>
+    
+        <!-- Tarjetas de Resumen -->
+        <div class="cards-grid">
+            <div class="summary-card">
+                <div class="card-header">
+                    <span class="icon">💳</span>
+                    <h3>Billetera</h3>
+                </div>
+                <p class="balance">$4,250.00</p>
+                <div class="card-footer">
+                    <button class="btn-primary">Recargar Saldo</button>
+                </div>
+            </div>
+    
+            <div class="summary-card">
+                <div class="card-header">
+                    <span class="icon">📊</span>
+                    <h3>Estadísticas</h3>
+                </div>
+                <ul class="stats-list">
+                    <li>Servicios activos: <strong>3</strong></li>
+                    <li>Último pago: <strong>20 Oct 2023</strong></li>
+                    <li>Próximo vencimiento: <strong>15 Nov 2023</strong></li>
+                </ul>
+            </div>
+        </div>
+    
+        <!-- Sección de Servicios -->
+        <div class="services-section">
+            <div class="section-header">
+                <h2>Tus Servicios</h2>
+                <button class="btn-secondary">+ Nuevo Servicio</button>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-info">
+                        <span class="service-icon">🖥️</span>
+                        <h4>Hosting Básico</h4>
+                        <p>Estado: <span class="status active">Activo</span></p>
+                        <p>Vence: 15/11/2023</p>
+                    </div>
+                    <div class="service-actions">
+                        <button class="btn-icon">⚙️</button>
+                        <button class="btn-icon">❌</button>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+  
+     
+    <script>
+      // Verificar estado de inicio de sesión
+      if (localStorage.getItem('loggedIn') === 'true') {
+        document.getElementById('miCuenta').style.display = 'block';
+        document.getElementById('logout').style.display = 'block';
+        document.getElementById('inicio').style.display = 'none';
+      }
+
+      document.getElementById('logout').addEventListener('click', function () {
+        // Cerrar sesión
+        localStorage.removeItem('loggedIn');
+        alert('Sesión cerrada');
+        window.location.href = 'index.html';
+      });
+    </script>
+  </body>
+</html>

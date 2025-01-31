@@ -1,0 +1,142 @@
+<link rel="stylesheet" href="css/servicios.css" />
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>servicios</title>
+    <link rel="stylesheet" href="/public/css/styles.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-content">
+        <div class="nav-brand">
+          <a href="#"> MAC </a>
+        </div>
+        <div class="search-container">
+          <input
+            type="text"
+            placeholder="Buscar servicios"
+            class="search-input"
+          />
+          
+          <button class="search-button">Buscar</button>
+        </div>
+        <div class="nav-links">
+          <a href="index.html" id="inicio">Inicio</a>
+
+          <a href="#">Comunidad</a>
+
+          <a href="dashboard.html" id="Dashboard" style="display: none"
+            >Dashboard</a
+          >
+          <a href="cuenta.html" id="miCuenta" style="display: none"
+            >Mi Cuenta</a
+          >
+          <a href="index.html" id="logout" style="display: none"
+            >Cerrar Sesión</a>
+        
+      
+    </nav>
+    <main>
+      <section class="card">
+        <h2>Publicar una solicitud</h2>
+        <input
+          type="text"
+          class="input"
+          placeholder="¿Qué necesitas? (Ej. pasear al perro, tutoría, etc.)"
+        />
+        <input
+          type="text"
+          class="input"
+          placeholder="Ubicación (Ej. tu vecindario o ciudad)"
+        />
+        <button class="button">Publicar</button>
+      </section>
+
+      <section>
+        <h2>Solicitudes cercanas</h2>
+        <div class="requests">
+          <div class="card2">
+            <h3>Pasear al perro</h3>
+            <p>Ubicación: Centro de la ciudad</p>
+            <p>Recompensa: $10</p>
+            <a href="#">solicitante</a>
+            <button class="button">Ayudar</button>
+          </div>
+          <div class="card2">
+            <h3>Reparar una bicicleta</h3>
+            <p>Ubicación: Parque principal</p>
+            <p>Recompensa: $15</p>
+            <a href="#">solicitante</a>
+            <button class="button">Ayudar</button>
+          </div>
+          <div class="card2">
+            <h3>Tutoría de matemáticas</h3>
+            <p>Ubicación: Biblioteca</p>
+            <p>Recompensa: $20</p>
+            <a href="#">solicitante</a>
+            <button class="button">Ayudar</button>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Sobre Komuna</h3>
+          <p>
+            Una plataforma dedicada a fortalecer los lazos comunitarios y
+            promover el apoyo mutuo.
+          </p>
+        </div>
+        <div class="footer-section">
+          <h3>Enlaces Útiles</h3>
+          <ul class="footer-links">
+            <li><a href="#">Términos y Condiciones</a></li>
+            <li><a href="#">Política de Privacidad</a></li>
+            <li><a href="#">Preguntas Frecuentes</a></li>
+            <li><a href="#">Centro de Ayuda</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Contacto</h3>
+          <ul class="footer-links">
+            <li>Email: contacto@komuna.com</li>
+            <li>Teléfono: (123) 456-7890</li>
+            <li>
+              <div class="social-links">
+                <a href="#">📘</a>
+                <!-- Facebook -->
+                <a href="#">📱</a>
+                <!-- Instagram -->
+                <a href="#">🐦</a>
+                <!-- Twitter -->
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="legal-bar">
+        © 2025 Komuna. Todos los derechos reservados. | RGPD | Aviso Legal |
+        Cookies
+      </div>
+    </footer>
+    <script>
+      // Verificar estado de inicio de sesión
+      if (localStorage.getItem('loggedIn') === 'true') {
+        document.getElementById('inicio').style.display = 'none';
+        document.getElementById('miCuenta').style.display = 'block';
+        document.getElementById('Dashboard').style.display = 'block';
+        document.getElementById('logout').style.display = 'block';
+      }
+
+      document.getElementById('logout').addEventListener('click', function () {
+        // Cerrar sesión
+        localStorage.removeItem('loggedIn');
+        alert('Sesión cerrada');
+        window.location.href = 'index.html';
+      });
+    </script>
+  </body>
+</html>

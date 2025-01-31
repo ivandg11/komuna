@@ -1,0 +1,109 @@
+<link rel="stylesheet" href="../public/css/cuenta.css" />
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mi Cuenta</title>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-content">
+        <div class="nav-brand">
+          <a href="#" class="nav-logo">Komuna</a>
+        </div>
+        <div class="nav-links">
+          <a href="servicios.html">Servicios</a>
+          <a href="#">Comunidad</a>
+          <a href="dashboard.html">Dashboard</a>
+          <a href="#" id="logout">Cerrar Sesión</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="account-container">
+      <!-- Encabezado -->
+      <div class="account-header">
+        <h1>Configuración de Cuenta</h1>
+        <p class="account-subtitle">
+          Gestiona tu información personal y preferencias
+        </p>
+      </div>
+
+      <!-- Secciones principales -->
+      <div class="account-sections">
+        <!-- Perfil -->
+        <div class="account-card">
+          <div class="card-header">
+            <h2>📌 Perfil</h2>
+            <button class="btn-edit">Editar</button>
+          </div>
+          <div class="account-details">
+            <div class="avatar-section">
+              <div class="avatar-preview">
+                <img src="avatar-placeholder.png" alt="Avatar" />
+              </div>
+              <button class="btn-icon">🖼️ Cambiar foto</button>
+            </div>
+            <div class="profile-info">
+              <p><strong>Nombre:</strong> Juan Pérez</p>
+              <p><strong>Email:</strong> juan@example.com</p>
+              <p><strong>Registro:</strong> 15 Ene 2022</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Seguridad -->
+        <div class="account-card">
+          <div class="card-header">
+            <h2>🔒 Seguridad</h2>
+          </div>
+          <div class="security-settings">
+            <div class="security-item">
+              <span>Contraseña: *******</span>
+              <button class="btn-secondary">Cambiar contraseña</button>
+            </div>
+            <div class="security-item">
+              <span>Autenticación en dos pasos</span>
+              <div class="toggle-switch">
+                <input type="checkbox" id="2fa" />
+                <label for="2fa"></label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Preferencias -->
+        <div class="account-card">
+          <div class="card-header">
+            <h2>⚙️ Preferencias</h2>
+          </div>
+          <div class="preference-settings">
+            <div class="preference-item">
+              <label>Idioma</label>
+              <select class="form-select">
+                <option>Español</option>
+                <option>English</option>
+              </select>
+            </div>
+            <div class="preference-item">
+              <label>Tema de la interfaz</label>
+              <div class="theme-options">
+                <button class="theme-btn light active">Claro</button>
+                <button class="theme-btn dark">Oscuro</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.getElementById('logout').addEventListener('click', function () {
+        // Aquí puedes agregar la lógica para cerrar sesión, por ejemplo, eliminando tokens o cookies
+        alert('Sesión cerrada');
+        window.location.href = 'index.html';
+      });
+    </script>
+  </body>
+</html>

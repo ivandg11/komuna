@@ -1,0 +1,91 @@
+<link rel="stylesheet" href="css/styles.css" />
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Komuna - Red de Apoyo Comunitario</title>
+  </head>
+  <body>
+    <nav class="navbar">
+        <div class="nav-content">
+      <a href="#" class="nav-logo">Komuna</a>
+      <div class="nav-links">
+        <a href="index.html">Ingresar </a>
+        <a href="servicios.html">Servicios</a>
+        <a href="#">Comunidad</a>
+        <a href="#">Contacto</a>
+        <a href="cuenta.html" id="miCuenta" style="display: none"
+            >Mi Cuenta</a>
+        <a href="dashboard.html" id="Dashboard" style="display: none"
+            >Dashboard</a>
+          <a href="#" id="logout" style="display: none">Cerrar Sesión</a>
+      </div>
+    </nav>
+    <div class="intro-text">
+        <span class="intro-text-part">
+          Bienvenido a Komuna, la red de apoyo comunitario donde cada contribución
+          cuenta.
+        </span>
+        <span class="intro-text-part">
+          Conéctate, comparte y ayuda a crear un impacto positivo en tu comunidad.
+        </span>
+      </div>
+    <section class="features">
+      <div class="feature-card">
+        <div class="feature-icon">🤝</div>
+        <h3>Conexión Comunitaria</h3>
+        <p>
+          Conecta con personas de tu comunidad que comparten tus intereses y
+          necesidades.
+        </p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">💡</div>
+        <h3>Intercambio de Servicios</h3>
+        <p>
+          Comparte tus habilidades y recibe ayuda de otros miembros de la
+          comunidad.
+        </p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🌱</div>
+        <h3>Impacto Social</h3>
+        <p>Contribuye al desarrollo y bienestar de tu comunidad local.</p>
+      </div>
+    </section>
+    <footer class="footer">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>Sobre Komuna</h3>
+            <p>
+              Una plataforma dedicada a fortalecer los lazos comunitarios y
+              promover el apoyo mutuo.
+            </p>
+          </div>
+          <div class="footer-section">
+            <h3>Enlaces Útiles</h3>
+            <ul class="footer-links">
+              <li><a href="#">Términos y Condiciones</a></li>
+              <li><a href="#">Política de Privacidad</a></li>
+              <li><a href="#">Preguntas Frecuentes</a></li>
+              <li><a href="#">Centro de Ayuda</a></li>
+            </ul>
+          </div>
+  </body>
+  <script>
+    // Verificar estado de inicio de sesión
+    if (localStorage.getItem('loggedIn') === 'true') {
+      document.getElementById('miCuenta').style.display = 'block';
+      document.getElementById('Dashboard').style.display = 'block';
+      document.getElementById('logout').style.display = 'block';
+    }
+
+    document.getElementById('logout').addEventListener('click', function () {
+      // Cerrar sesión
+      localStorage.removeItem('loggedIn');
+      alert('Sesión cerrada');
+      window.location.href = 'index.html';
+    });
+  </script>
+</html>
