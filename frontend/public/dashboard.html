@@ -1,142 +1,262 @@
-
-<link rel="stylesheet" href="../public/css/dashboard.css" />
+<link rel="stylesheet" href="css/dashboard.css" />
 <!DOCTYPE html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Servicios</title>
-    <link rel="stylesheet" href="/public/css/styles.css" />
+    <title>Dashboard - Komuna</title>
+
+    <!-- Librería de gráficos -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
   <body>
     <nav class="navbar">
-      <div class="nav-container">
-        
-          <a href="#" class="nav-logo">MAC</a>
-        
+      <div class="nav-content">
+        <div class="nav-brand">
+          <a href="#" class="nav-logo">Komuna</a>
+        </div>
         <div class="nav-links">
-          <a href="index.html" id="inicio">Inicio</a>
+          <a href="index.html">Pagina Principal</a>
           <a href="servicios.html">Servicios</a>
           <a href="#">Comunidad</a>
-          <a href="#">Contacto</a>
-          <a href="cuenta.html" id="miCuenta" style="display: none;">Mi Cuenta</a>
-          <a href="#" id="logout" style="display: none;">Cerrar Sesión</a>
+          <a href="#" id="logout">Cerrar Sesión</a>
         </div>
       </div>
     </nav>
-   
-   
-     
-      <div class="dashboard-container">
-        <!-- Sección de Bienvenida -->
-        <div class="header-section">
-            <h1>Bienvenido de vuelta, [Usuario]</h1>
-            <p class="subtitle">Último acceso: 25 Oct 2023</p>
-        </div>
-    
-        <!-- Tarjetas de Resumen -->
-        <div class="cards-grid">
-            <div class="summary-card">
-                <div class="card-header">
-                    <span class="icon">💳</span>
-                    <h3>Billetera</h3>
-                </div>
-                <p class="balance">$4,250.00</p>
-                <div class="card-footer">
-                    <button class="btn-primary">Recargar Saldo</button>
-                </div>
-            </div>
-    
-            <div class="summary-card">
-                <div class="card-header">
-                    <span class="icon">📊</span>
-                    <h3>Estadísticas</h3>
-                </div>
-                <ul class="stats-list">
-                    <li>Servicios activos: <strong>3</strong></li>
-                    <li>Último pago: <strong>20 Oct 2023</strong></li>
-                    <li>Próximo vencimiento: <strong>15 Nov 2023</strong></li>
-                </ul>
-            </div>
-        </div>
-    
-        <!-- Sección de Servicios -->
-        <div class="services-section">
-            <div class="section-header">
-                <h2>Tus Servicios</h2>
-                <button class="btn-secondary">+ Nuevo Servicio</button>
-            </div>
-            
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-info">
-                        <span class="service-icon">🖥️</span>
-                        <h4>Hosting Básico</h4>
-                        <p>Estado: <span class="status active">Activo</span></p>
-                        <p>Vence: 15/11/2023</p>
-                    </div>
-                    <div class="service-actions">
-                        <button class="btn-icon">⚙️</button>
-                        <button class="btn-icon">❌</button>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-        <footer class="footer">
-          <div class="footer-container">
-            
-    
-            <div class="footer-col">
-              <h4>Komuna</h4>
-              <ul>
-                <li><a href="nosotros.html">Sobre nosotros</a></li>
-                <li><a href="#impacto">Nuestro impacto</a></li>
-                <li><a href="blog.html">Blog</a></li>
-              </ul>
-            </div>
-    
-            <div class="footer-col">
-              <h4>Legal</h4>
-              <ul>
-                <li><a href="#">Términos y condiciones</a></li>
-                <li><a href="#">Privacidad</a></li>
-                <li><a href="#">Seguridad</a></li>
-              </ul>
-            </div>
-    
-            <div class="footer-col">
-              <h4>Recursos</h4>
-              <ul>
-                <li><a href="#">Centro de ayuda</a></li>
-                <li><a href="#">Guías comunitarias</a></li>
-                <li><a href="#">Contacto</a></li>
-              </ul>
-            </div>
-          </div>
-    
-          <div class="footer-bottom">
-            <p>
-              © 2023 Komuna. Todos los derechos reservados. |
-              <a href="#">Política de cookies</a>
-            </p>
-          </div>
-        </footer>
-  
-     
-    <script>
-      // Verificar estado de inicio de sesión
-      if (localStorage.getItem('loggedIn') === 'true') {
-        document.getElementById('miCuenta').style.display = 'block';
-        document.getElementById('logout').style.display = 'block';
-        
-      }
+    <!-- Estructura del Dashboard -->
+    <div class="dashboard-container">
+      <!-- Sidebar -->
+      <aside class="dashboard-sidebar">
+        <nav class="sidebar-nav">
+          <ul>
+            <li>
+              <a href="#" class="nav-item active">
+                <img src="img/icons/dashboard.svg" alt="Inicio" />
+                <span>Inicio</span>
+              </a>
+            </li>
+            <li>
+              <a href="servicios.html" class="nav-item">
+                <img src="img/icons/services.svg" alt="Servicios" />
+                <span>Mis Servicios</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="nav-item">
+                <img src="img/icons/events.svg" alt="Eventos" />
+                <span>Eventos</span>
+                <span class="notification-badge">3</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="nav-item">
+                <img src="img/icons/messages.svg" alt="Mensajes" />
+                <span>Mensajes</span>
+              </a>
+            </li>
+            <li>
+              <a href="cuenta.html" class="nav-item">
+                <img src="img/icons/settings.svg" alt="Configuración" />
+                <span>Configuración</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
 
-      document.getElementById('logout').addEventListener('click', function () {
-        // Cerrar sesión
+      <!-- Contenido principal -->
+      <main class="dashboard-main">
+        <!-- Header -->
+        <header class="dashboard-header">
+          <div class="header-left">
+            <h1>Bienvenido, <span id="userName">Ana Pérez</span></h1>
+            <p class="last-login">Último acceso: 25 Oct 2023</p>
+          </div>
+
+          <div class="header-right">
+            <div class="user-profile">
+              <img src="img/user-avatar.jpg" alt="Avatar" class="user-avatar" />
+              <div class="user-info">
+                <p class="user-points">⭐ 1,450 Puntos</p>
+                <p class="user-level">Nivel 5 - Colaborador</p>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <!-- Métricas principales -->
+        <section class="metrics-grid">
+          <div class="metric-card">
+            <div class="metric-icon blue">
+              <img src="img/icons/services-active.svg" alt="Servicios" />
+            </div>
+            <div class="metric-info">
+              <h3>Servicios Activos</h3>
+              <p class="metric-value">12</p>
+            </div>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-icon green">
+              <img src="img/icons/participations.svg" alt="Participaciones" />
+            </div>
+            <div class="metric-info">
+              <h3>Participaciones</h3>
+              <p class="metric-value">45</p>
+            </div>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-icon purple">
+              <img src="img/icons/ranking.svg" alt="Ranking" />
+            </div>
+            <div class="metric-info">
+              <h3>Ranking Comunitario</h3>
+              <p class="metric-value">#8</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Gráficos y actividad -->
+        <section class="dashboard-content">
+          <div class="main-chart">
+            <h2>Tu Actividad Mensual</h2>
+            <canvas id="activityChart"></canvas>
+          </div>
+
+          <div class="activity-feed">
+            <h2>Actividad Reciente</h2>
+            <div class="activity-list">
+              <div class="activity-item">
+                <div class="activity-icon">
+                  <img src="img/icons/checkmark.svg" alt="Completado" />
+                </div>
+                <div class="activity-text">
+                  <p>Servicio completado: Reparación de mobiliario</p>
+                  <small>Hace 2 horas</small>
+                </div>
+              </div>
+
+              <div class="activity-item">
+                <div class="activity-icon">
+                  <img src="img/icons/event-reminder.svg" alt="Recordatorio" />
+                </div>
+                <div class="activity-text">
+                  <p>Evento próximo: Taller de reciclaje - 28 Oct</p>
+                  <small>Hace 1 día</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Servicios pendientes -->
+        <section class="pending-tasks">
+          <h2>Servicios Pendientes</h2>
+          <div class="task-list">
+            <div class="task-card">
+              <div class="task-info">
+                <h3>Clases de inglés básico</h3>
+                <p>Solicitado por: Luis Martínez</p>
+                <div class="task-status pending">Pendiente de confirmación</div>
+              </div>
+              <div class="task-actions">
+                <button class="btn-accept">Aceptar</button>
+                <button class="btn-decline">Rechazar</button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script>
+      // Control de gráfico
+      const ctx = document.getElementById('activityChart').getContext('2d');
+      new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun'],
+          datasets: [
+            {
+              label: 'Participaciones',
+              data: [12, 19, 3, 5, 2, 3],
+              borderColor: '#5dfd00',
+              borderWidth: 2,
+              tension: 0.4,
+              pointRadius: 5,
+              pointBackgroundColor: '#5dfd00',
+              pointBorderColor: '#000',
+              fill: true,
+              backgroundColor: 'rgba(93, 253, 0, 0.05)',
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              labels: {
+                color: '#fff',
+                font: {
+                  size: 14,
+                },
+              },
+            },
+          },
+          scales: {
+            x: {
+              grid: {
+                color: 'rgba(255, 255, 255, 0.05)',
+              },
+              ticks: {
+                color: 'rgba(255, 255, 255, 0.7)',
+              },
+            },
+            y: {
+              grid: {
+                color: 'rgba(255, 255, 255, 0.05)',
+              },
+              ticks: {
+                color: 'rgba(255, 255, 255, 0.7)',
+              },
+            },
+          },
+        },
+      });
+
+      // Control de logout
+      document.getElementById('logout').addEventListener('click', () => {
         localStorage.removeItem('loggedIn');
-        alert('Sesión cerrada');
         window.location.href = 'index.html';
+      });
+      // Manejo del estado activo del menú
+      document.addEventListener('DOMContentLoaded', function () {
+        const navItems = document.querySelectorAll('.sidebar-nav li');
+        const currentPage = window.location.pathname
+          .split('/')
+          .pop()
+          .split('.')[0]; // Ej: "servicios" si la URL es servicios.html
+
+        // Función para activar el elemento correspondiente
+        function setActiveNav() {
+          navItems.forEach((item) => {
+            const page = item.dataset.page;
+            item.classList.toggle('active', page === currentPage);
+          });
+        }
+
+        // Inicializar al cargar
+        setActiveNav();
+
+        // Opcional: Actualizar al hacer clic (para SPAs)
+        navItems.forEach((item) => {
+          item.addEventListener('click', () => {
+            navItems.forEach((i) => i.classList.remove('active'));
+            item.classList.add('active');
+          });
+        });
       });
     </script>
   </body>

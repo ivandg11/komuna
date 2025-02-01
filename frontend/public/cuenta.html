@@ -13,14 +13,52 @@
           <a href="#" class="nav-logo">Komuna</a>
         </div>
         <div class="nav-links">
-          <a href="index.html">Inicio</a>
+          
           <a href="servicios.html">Servicios</a>
           <a href="#">Comunidad</a>
-          <a href="dashboard.html">Dashboard</a>
+          
           <a href="#" id="logout">Cerrar Sesión</a>
         </div>
       </div>
     </nav>
+    <div class="dashboard-container">
+      <aside class="dashboard-sidebar">
+        <nav class="sidebar-nav">
+          <ul>
+            <li>
+              <a href="dashboard.html" class="nav-item">
+                <img src="img/icons/dashboard.svg" alt="Inicio" />
+                <span>Inicio</span>
+              </a>
+            </li>
+            <li>
+              <a href="servicios.html" class="nav-item">
+                <img src="img/icons/services.svg" alt="Servicios" />
+                <span>Mis Servicios</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="nav-item">
+                <img src="img/icons/events.svg" alt="Eventos" />
+                <span>Eventos</span>
+                <span class="notification-badge">3</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="nav-item">
+                <img src="img/icons/messages.svg" alt="Mensajes" />
+                <span>Mensajes</span>
+              </a>
+            </li>
+            <li>
+              <a href="cuenta.html" class="nav-item active" >
+                <img src="img/icons/settings.svg" alt="Configuración" />
+                <span>Configuración</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
 
     <div class="account-container">
       <!-- Encabezado -->
@@ -104,6 +142,33 @@
         // Aquí puedes agregar la lógica para cerrar sesión, por ejemplo, eliminando tokens o cookies
         alert('Sesión cerrada');
         window.location.href = 'index.html';
+      });
+       // Manejo del estado activo del menú
+       document.addEventListener('DOMContentLoaded', function () {
+        const navItems = document.querySelectorAll('.sidebar-nav li');
+        const currentPage = window.location.pathname
+          .split('/')
+          .pop()
+          .split('.')[0]; // Ej: "servicios" si la URL es servicios.html
+
+        // Función para activar el elemento correspondiente
+        function setActiveNav() {
+          navItems.forEach((item) => {
+            const page = item.dataset.page;
+            item.classList.toggle('active', page === currentPage);
+          });
+        }
+
+        // Inicializar al cargar
+        setActiveNav();
+
+        // Opcional: Actualizar al hacer clic (para SPAs)
+        navItems.forEach((item) => {
+          item.addEventListener('click', () => {
+            navItems.forEach((i) => i.classList.remove('active'));
+            item.classList.add('active');
+          });
+        });
       });
     </script>
   </body>

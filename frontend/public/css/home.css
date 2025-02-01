@@ -21,7 +21,7 @@ html {
 }
 
 body {
-  background-color: #323232;
+  background-color: #1a1a1a;
   color: var(--text-color);
   line-height: 1.6;
 }
@@ -168,7 +168,7 @@ body {
   border-top: 1px solid #5dfd00;
   color: #ffffff;
   padding: 5rem 5%;
-  background: #4a4a4a;
+  background: #323232;
 }
 
 .section-header {
