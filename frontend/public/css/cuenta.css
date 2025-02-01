@@ -38,6 +38,7 @@
   color: #3cff00;
 }
 .account-header {
+  margin-top: 60px;
   color: whitesmoke;
   padding: 3.5rem;
 }
@@ -183,12 +184,25 @@ input:checked + label:before {
   --text-dark: #323232;
   --text-light: #ffffff;
 }
-body {
-  background-color: var(--text-dark);
+* {
   margin: 0;
   padding: 0;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Poppins', sans-serif;
 }
+html {
+  scroll-behavior: smooth;
+}
+.nav-logo {
+  color: #4ade4a;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+body {
+  background-color: #323232;
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
 .navbar {
   background-color: rgba(0, 0, 0, 0.9);
   padding: 1rem;
@@ -207,7 +221,6 @@ body {
 }
 .nav-links a:hover {
   color: var(--primary-color);
-  background-color: rgba(93, 253, 0, 0.1);
 }
 .nav-links a {
   color: var(--text-light);

@@ -10,10 +10,10 @@
   </head>
   <body>
     <nav class="navbar">
-      <div class="nav-content">
-        <div class="nav-brand">
-          <a href="#">MAC</a>
-        </div>
+      <div class="nav-container">
+        
+          <a href="#" class="nav-logo">MAC</a>
+        
         <div class="nav-links">
           <a href="index.html" id="inicio">Inicio</a>
           <a href="servicios.html">Servicios</a>
@@ -22,7 +22,6 @@
           <a href="cuenta.html" id="miCuenta" style="display: none;">Mi Cuenta</a>
           <a href="#" id="logout" style="display: none;">Cerrar Sesión</a>
         </div>
-        
       </div>
     </nav>
    
@@ -84,6 +83,45 @@
                 
             </div>
         </div>
+        <footer class="footer">
+          <div class="footer-container">
+            
+    
+            <div class="footer-col">
+              <h4>Komuna</h4>
+              <ul>
+                <li><a href="nosotros.html">Sobre nosotros</a></li>
+                <li><a href="#impacto">Nuestro impacto</a></li>
+                <li><a href="blog.html">Blog</a></li>
+              </ul>
+            </div>
+    
+            <div class="footer-col">
+              <h4>Legal</h4>
+              <ul>
+                <li><a href="#">Términos y condiciones</a></li>
+                <li><a href="#">Privacidad</a></li>
+                <li><a href="#">Seguridad</a></li>
+              </ul>
+            </div>
+    
+            <div class="footer-col">
+              <h4>Recursos</h4>
+              <ul>
+                <li><a href="#">Centro de ayuda</a></li>
+                <li><a href="#">Guías comunitarias</a></li>
+                <li><a href="#">Contacto</a></li>
+              </ul>
+            </div>
+          </div>
+    
+          <div class="footer-bottom">
+            <p>
+              © 2023 Komuna. Todos los derechos reservados. |
+              <a href="#">Política de cookies</a>
+            </p>
+          </div>
+        </footer>
   
      
     <script>
@@ -91,7 +129,7 @@
       if (localStorage.getItem('loggedIn') === 'true') {
         document.getElementById('miCuenta').style.display = 'block';
         document.getElementById('logout').style.display = 'block';
-        document.getElementById('inicio').style.display = 'none';
+        
       }
 
       document.getElementById('logout').addEventListener('click', function () {

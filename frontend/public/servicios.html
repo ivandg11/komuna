@@ -1,29 +1,28 @@
 <link rel="stylesheet" href="css/servicios.css" />
+
 <!DOCTYPE html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>servicios</title>
-    <link rel="stylesheet" href="/public/css/styles.css" />
   </head>
   <body>
     <nav class="navbar">
-      <div class="nav-content">
-        <div class="nav-brand">
-          <a href="#"> MAC </a>
-        </div>
+      <div class="nav-container">
+        <a href="#" class="nav-logo">Komuna</a>
+
         <div class="search-container">
           <input
             type="text"
             placeholder="Buscar servicios"
             class="search-input"
           />
-          
+
           <button class="search-button">Buscar</button>
         </div>
         <div class="nav-links">
-          <a href="index.html" id="inicio">Inicio</a>
+          <a href="index.html">Inicio</a>
 
           <a href="#">Comunidad</a>
 
@@ -34,9 +33,10 @@
             >Mi Cuenta</a
           >
           <a href="index.html" id="logout" style="display: none"
-            >Cerrar Sesión</a>
-        
-      
+            >Cerrar Sesión</a
+          >
+        </div>
+      </div>
     </nav>
     <main>
       <section class="card">
@@ -125,7 +125,6 @@
     <script>
       // Verificar estado de inicio de sesión
       if (localStorage.getItem('loggedIn') === 'true') {
-        document.getElementById('inicio').style.display = 'none';
         document.getElementById('miCuenta').style.display = 'block';
         document.getElementById('Dashboard').style.display = 'block';
         document.getElementById('logout').style.display = 'block';
