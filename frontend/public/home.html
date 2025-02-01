@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="css/styles.css" />
+
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -31,6 +31,7 @@
           Conéctate, comparte y ayuda a crear un impacto positivo en tu comunidad.
         </span>
       </div>
+<<<<<<< Updated upstream
     <section class="features">
       <div class="feature-card">
         <div class="feature-icon">🤝</div>
@@ -72,6 +73,111 @@
               <li><a href="#">Centro de Ayuda</a></li>
             </ul>
           </div>
+=======
+      <div class="hero-image">
+        <img
+          src="img/hero-community.png"
+          alt="Comunidad colaborando"
+          loading="lazy"
+        />
+      </div>
+    </header>
+
+    <!-- Sección de características -->
+    <section class="features-section">
+      <div class="section-header">
+        <h2>Transforma tu comunidad</h2>
+        <p>Descubre todo lo que puedes lograr con Komuna</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🤝</div>
+          <h3>Conexión Comunitaria</h3>
+          <p>Red de vecinos y organizaciones locales comprometidos</p>
+        </div>
+
+        <div class="feature-card highlight">
+          <div class="feature-icon">📈</div>
+          <h3>Estadísticas en Tiempo Real</h3>
+          <p>Monitorea el impacto de tus contribuciones</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">🔒</div>
+          <h3>Seguridad Garantizada</h3>
+          <p>Plataforma verificada y protegida</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección de testimonios -->
+    <section class="testimonials" id="testimonios">
+      <div class="section-header">
+        <h2>Lo que dicen nuestros miembros</h2>
+      </div>
+      <div class="testimonial-carousel">
+        <div class="testimonial-card">
+          <p class="testimonial-text">
+            "Gracias a Komuna hemos organizado nuestra primera feria de trueque
+            comunal"
+          </p>
+          <div class="testimonial-author">
+            <img src="img/user1.jpg" alt="Usuario 1" />
+            <span>María G., Lima</span>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <p class="testimonial-text">
+            "Encontramos voluntarios para nuestro comedor social en menos de 24
+            horas!!!"
+          </p>
+          <div class="testimonial-author">
+            <img src="img/user2.jpg" alt="Usuario 2" />
+            <span>Carlos R., Bogotá</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección de llamada a acción -->
+    <section class="cta-section">
+      <div class="cta-content">
+        <h2>¡Empieza ahora mismo!</h2>
+        <p>Regístrate gratis y comienza a hacer la diferencia</p>
+      </div>
+    </section>
+
+    <!-- Footer -->
+
+    <script>
+      // Controlador del menú móvil
+      document.querySelector('.mobile-menu').addEventListener('click', () => {
+        document.querySelector('.nav-links').classList.toggle('active');
+      });
+
+      // Control de sesión
+      const updateNav = () => {
+        const isLoggedIn = localStorage.getItem('loggedIn') === 'true';
+        document.getElementById('userMenu').style.display = isLoggedIn
+          ? 'flex'
+          : 'none';
+        document.querySelector('.btn-login').style.display = isLoggedIn
+          ? 'none'
+          : 'block';
+      };
+
+      document.getElementById('logout').addEventListener('click', () => {
+        localStorage.removeItem('loggedIn');
+        alert('Sesión cerrada correctamente');
+        updateNav();
+        window.location.href = 'index.html';
+      });
+
+      // Inicialización
+      window.onload = updateNav;
+    </script>
+>>>>>>> Stashed changes
   </body>
   <script>
     // Verificar estado de inicio de sesión
