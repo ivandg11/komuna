@@ -1,141 +1,126 @@
 <link rel="stylesheet" href="css/servicios.css" />
-
 <!DOCTYPE html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>servicios</title>
+    <title>Servicios - Komuna</title>
   </head>
   <body>
-    <nav class="navbar">
+    
       <div class="nav-container">
         <a href="#" class="nav-logo">Komuna</a>
 
         <div class="search-container">
           <input
             type="text"
-            placeholder="Buscar servicios"
+            placeholder="🔍 Buscar servicios..."
             class="search-input"
           />
-
           <button class="search-button">Buscar</button>
         </div>
+        <nav class="navbar">
         <div class="nav-links">
           <a href="index.html">Inicio</a>
-
           <a href="#">Comunidad</a>
-
-          <a href="dashboard.html" id="Dashboard" style="display: none"
-            >Dashboard</a
-          >
-          <a href="cuenta.html" id="miCuenta" style="display: none"
-            >Mi Cuenta</a
-          >
-          <a href="index.html" id="logout" style="display: none"
-            >Cerrar Sesión</a
-          >
+          <a href="dashboard.html" id="Dashboard">Dashboard</a>
+          <a href="cuenta.html" id="miCuenta">Mi Cuenta</a>
+          <a href="index.html" id="logout">Cerrar Sesión</a>
         </div>
       </div>
     </nav>
+
     <main>
-      <section class="card">
-        <h2>Publicar una solicitud</h2>
-        <input
-          type="text"
-          class="input"
-          placeholder="¿Qué necesitas? (Ej. pasear al perro, tutoría, etc.)"
-        />
-        <input
-          type="text"
-          class="input"
-          placeholder="Ubicación (Ej. tu vecindario o ciudad)"
-        />
-        <button class="button">Publicar</button>
+      <section class="card request-form">
+        <h2 class="section-title">📤 Publicar Nueva Solicitud</h2>
+        <form id="requestForm" class="needs-form">
+          <div class="input-group">
+            <input
+              type="text"
+              class="input-glowing"
+              placeholder="¿Qué necesitas?"
+              id="titleInput"
+              required
+            />
+            <span class="input-icon">💡</span>
+          </div>
+
+          <div class="input-group">
+            <input
+              type="text"
+              class="input-glowing"
+              placeholder="📍 Ubicación"
+              id="locationInput"
+              required
+            />
+            <span class="input-icon">🌍</span>
+          </div>
+
+          <div class="input-group">
+            <input
+              type="number"
+              class="input-glowing"
+              placeholder="💰 Recompensa (opcional)"
+              id="rewardInput"
+            />
+            <span class="input-icon">💎</span>
+          </div>
+
+          <button type="submit" class="button-glowing">
+            <span class="button-content">Publicar Solicitud</span>
+            <div class="glow"></div>
+          </button>
+        </form>
       </section>
 
-      <section>
-        <h2>Solicitudes cercanas</h2>
-        <div class="requests">
-          <div class="card2">
-            <h3>Pasear al perro</h3>
-            <p>Ubicación: Centro de la ciudad</p>
-            <p>Recompensa: $10</p>
-            <a href="#">solicitante</a>
-            <button class="button">Ayudar</button>
-          </div>
-          <div class="card2">
-            <h3>Reparar una bicicleta</h3>
-            <p>Ubicación: Parque principal</p>
-            <p>Recompensa: $15</p>
-            <a href="#">solicitante</a>
-            <button class="button">Ayudar</button>
-          </div>
-          <div class="card2">
-            <h3>Tutoría de matemáticas</h3>
-            <p>Ubicación: Biblioteca</p>
-            <p>Recompensa: $20</p>
-            <a href="#">solicitante</a>
-            <button class="button">Ayudar</button>
-          </div>
+      <section class="requests-section">
+        <h2 class="section-title">🌟 Solicitudes Cercanas</h2>
+        <div class="requests-grid">
+          <!-- Ejemplo de tarjeta de solicitud -->
+          <article class="service-card">
+            <div class="card-header">
+              <h3>🐕 Pasear al perro</h3>
+              <span class="reward-badge">$10</span>
+            </div>
+            <div class="card-body">
+              <p class="location">📍 Centro de la ciudad</p>
+              <div class="user-info">
+                <span class="user-avatar">👤</span>
+                <a href="#" class="user-link">@juanperez</a>
+              </div>
+            </div>
+            <button class="action-button">
+              <span>Ofrecer Ayuda</span>
+              <div class="button-glow"></div>
+            </button>
+          </article>
+          <article class="service-card">
+            <div class="card-header">
+              <h3>Cambiar mi llanta </h3>
+              <span class="reward-badge">$10</span>
+            </div>
+            <div class="card-body">
+              <p class="location">📍 Centro de la ciudad</p>
+              <div class="user-info">
+                <span class="user-avatar">👤</span>
+                <a href="#" class="user-link">@juanperez</a>
+              </div>
+            </div>
+            <button class="action-button">
+              <span>Ofrecer Ayuda</span>
+              <div class="button-glow"></div>
+            </button>
+          </article>
+
+          <!-- Más tarjetas... -->
         </div>
       </section>
     </main>
-    <footer class="footer">
-      <div class="footer-content">
-        <div class="footer-section">
-          <h3>Sobre Komuna</h3>
-          <p>
-            Una plataforma dedicada a fortalecer los lazos comunitarios y
-            promover el apoyo mutuo.
-          </p>
-        </div>
-        <div class="footer-section">
-          <h3>Enlaces Útiles</h3>
-          <ul class="footer-links">
-            <li><a href="#">Términos y Condiciones</a></li>
-            <li><a href="#">Política de Privacidad</a></li>
-            <li><a href="#">Preguntas Frecuentes</a></li>
-            <li><a href="#">Centro de Ayuda</a></li>
-          </ul>
-        </div>
-        <div class="footer-section">
-          <h3>Contacto</h3>
-          <ul class="footer-links">
-            <li>Email: contacto@komuna.com</li>
-            <li>Teléfono: (123) 456-7890</li>
-            <li>
-              <div class="social-links">
-                <a href="#">📘</a>
-                <!-- Facebook -->
-                <a href="#">📱</a>
-                <!-- Instagram -->
-                <a href="#">🐦</a>
-                <!-- Twitter -->
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="legal-bar">
-        © 2025 Komuna. Todos los derechos reservados. | RGPD | Aviso Legal |
-        Cookies
-      </div>
-    </footer>
-    <script>
-      // Verificar estado de inicio de sesión
-      if (localStorage.getItem('loggedIn') === 'true') {
-        document.getElementById('miCuenta').style.display = 'block';
-        document.getElementById('Dashboard').style.display = 'block';
-        document.getElementById('logout').style.display = 'block';
-      }
 
-      document.getElementById('logout').addEventListener('click', function () {
-        // Cerrar sesión
-        localStorage.removeItem('loggedIn');
-        alert('Sesión cerrada');
-        window.location.href = 'index.html';
-      });
-    </script>
+    <footer class="footer">
+      <!-- Contenido del footer -->
+    </footer>
+
+    <script src="js/main.js"></script>
   </body>
 </html>
