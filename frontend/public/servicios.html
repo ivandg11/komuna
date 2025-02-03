@@ -8,27 +8,27 @@
   </head>
   <body>
     
-      <div class="nav-container">
-        <a href="#" class="nav-logo">Komuna</a>
-
-        <div class="search-container">
+    <div class="nav-container">
+      <a href="#" class="nav-logo">Komuna</a>
+      
+      <div class="search-container">
           <input
-            type="text"
-            placeholder="🔍 Buscar servicios..."
-            class="search-input"
+              type="text"
+              placeholder="🔍 Buscar servicios..."
+              class="search-input"
           />
           <button class="search-button">Buscar</button>
-        </div>
-        <nav class="navbar">
-        <div class="nav-links">
-          <a href="index.html">Inicio</a>
-          <a href="#">Comunidad</a>
-          <a href="dashboard.html" id="Dashboard">Dashboard</a>
-          <a href="cuenta.html" id="miCuenta">Mi Cuenta</a>
-          <a href="index.html" id="logout">Cerrar Sesión</a>
-        </div>
       </div>
-    </nav>
+      
+      <nav class="navbar">
+          <div class="nav-links">
+              <a href="index.html">Inicio</a>
+              <a href="#">Comunidad</a>
+              <a href="dashboard.html" id="Dashboard">Dashboard</a>
+              <a href="index.html" id="logout">Cerrar Sesión</a>
+          </div>
+      </nav>
+  </div>
 
     <main>
       <section class="card request-form">
@@ -121,6 +121,38 @@
       <!-- Contenido del footer -->
     </footer>
 
-    <script src="js/main.js"></script>
+    <script 
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+          // Verificar si la sesión está activa (ejemplo usando localStorage)
+          const isLoggedIn = localStorage.getItem('loggedIn') === 'true';
+          
+          // Obtener elementos del DOM
+          const dashboardLink = document.getElementById('Dashboard');
+          const logoutLink = document.getElementById('logout');
+      
+          // Mostrar/ocultar elementos según el estado de la sesión
+          if (dashboardLink && logoutLink) {
+              if (!isLoggedIn) {
+                  dashboardLink.style.display = 'none';
+                  logoutLink.style.display = 'none';
+              } else {
+                  dashboardLink.style.display = 'inline-block';
+                  logoutLink.style.display = 'inline-block';
+              }
+          }
+      
+          // Función para cerrar sesión
+          if (logoutLink) {
+              logoutLink.addEventListener('click', function(e) {
+                  e.preventDefault();
+                  localStorage.removeItem('isLoggedIn');
+                  window.location.href = 'index.html';
+              });
+          }
+      });
+      </script>
+    </script>
+    
   </body>
 </html>
